@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    <title>Tasks</title>
+</head>
+
+<body>
+    <header class="section has-background-primary">
+        <h1 class="title is-1 has-text-dark  has-text-centered">Tarefas</h1>
+    </header>
+
+    <section class="section">
+        <div class="column mx-auto">
+            <form id="create-form" class="form box p-5" action="index.html" method="post">
+                <div class="field">
+                    <label class="label" for="title-task">Título</label>
+                    <input class="input" id="title-task" type="text" name="title" maxlength="127" required>
+                </div>
+                <div class="field">
+                    <label class="label" for="description-id">Descrição</label>
+                    <textarea class="textarea" id="description-id" name="description" type="text" maxlength="255"></textarea>
+                </div>
+                <button id="create-task" class="button is-primary" type="submit">Criar Tarefa</button>
+            </form>
+        </div>
+
+        <div id="modal-update" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <div class="box">
+                    <form class="form" action="#" method="post">
+                        <div class="field">
+                            <label class="label" for="title-task-up">Título</label>
+                            <input class="input" id="title-task-up" type="text" name="title" value="{0}" maxlength="127" required>
+                        </div>
+                        <div class="field">
+                            <label class="label" for="description-id-up">Descrição</label>
+                            <textarea class="textarea" id="description-id-up" name="description" type="text" maxlength="255">{}</textarea>
+                        </div>
+                        <button onclick="updateTask(this)" class="button is-warning" type="button">Atualizar Tarefa</button>
+                    </form>
+                </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+        <section id="task-container" class="section">
+        </section>
+    </section>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
